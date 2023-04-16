@@ -37,7 +37,5 @@ class PostEmployee : AppCompatActivity() {
             helper.post(api, body)
             //DONE
         }
-
-
     }
 }
