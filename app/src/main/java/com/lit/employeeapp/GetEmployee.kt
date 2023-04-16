@@ -21,26 +21,23 @@ class GetEmployee : AppCompatActivity() {
             override fun onSuccess(result: String?) {
                 //Toast.makeText(applicationContext, ""+result.toString(), Toast.LENGTH_SHORT).show()
                 //COnvert the GET results to JSON Array
-                val booksJSONArray = JSONArray(result.toString())
-
+                val employeeJSONArray = JSONArray(result.toString())
                 //Loop Each Object in the JSONArray
-                (0 until booksJSONArray.length()).forEach {
-                    val book = booksJSONArray.getJSONObject(it)
+                (0 until employeeJSONArray.length()).forEach {
+                    val employee = employeeJSONArray.getJSONObject(it)
                     //FOr each Object Find the TextView and Append the 5 C0lumns
                     val empdata = findViewById<TextView>(R.id.empdata)
-                    empdata.append("ID:"+book.get("id_number")+"\n")
-                    empdata.append("Username:"+book.get("username")+"\n")
-                    empdata.append("Others: "+book.get("others")+"\n")
-                    empdata.append("Salary"+book.get("salary")+"\n")
-                    empdata.append("Dept: "+book.get("department")+"\n")
+                    empdata.append("ID:"+employee.get("id_number")+"\n")
+                    empdata.append("Username:"+employee.get("username")+"\n")
+                    empdata.append("Others: "+employee.get("others")+"\n")
+                    empdata.append("Salary"+employee.get("salary")+"\n")
+                    empdata.append("Dept: "+employee.get("department")+"\n")
                     empdata.append("\n\n")
-                    //SInce its a Loop, ALl EMployees are Loaded in the TextView.
+                    //Since its a Loop, ALl EMployees are Loaded in the TextView.
                 }
                 //Stop Progress
                 progress.visibility = View.GONE
             }
         })
-    }
-
-
-}
+    }//end Oncreate
+}//end CLass
