@@ -1,4 +1,4 @@
-package helper
+package com.lit.employeeapp
 
 import android.content.Context
 import android.widget.Toast
@@ -8,8 +8,6 @@ import cz.msebera.android.httpclient.Header
 import cz.msebera.android.httpclient.entity.StringEntity
 import org.json.JSONArray
 import org.json.JSONObject
-
-
 class ApiHelper(var context: Context) {
     //POST
     fun post(api: String, jsonData: JSONObject){
